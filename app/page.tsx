@@ -50,6 +50,7 @@ export default function Home() {
     }
   }
 
+/*
   const processImage = async (imageFile: File) => {
     setLoading(true)
     setError(null)
@@ -77,6 +78,39 @@ export default function Home() {
       setLoading(false)
     }
   }
+*/
+
+const API_BASE_URL = process.env.NODE_ENV === 'development' 
+  ? 'http://127.0.0.1:5000/detect'  // Local Flask backend
+  : '/api/detect';  // Netlify deployed backend
+
+const processImage = async (imageFile: File) => {
+  setLoading(true)
+  setError(null)
+
+  try {
+    const formData = new FormData()
+    formData.append("image", imageFile)
+
+    const response = await fetch("http://127.0.0.1:5000/detect", {
+      method: "POST",
+      body: formData,
+    })
+
+    if (!response.ok) {
+      throw new Error("Detection failed")
+    }
+
+    const data = await response.json()
+    setResults(data.results)
+    setProcessed(true)
+  } catch (err) {
+    setError("An error occurred during detection. Please try again.")
+    console.error(err)
+  } finally {
+    setLoading(false)
+  }
+}
 
   const handleShowOutput = () => {
     if (processed && results) {
@@ -137,8 +171,8 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#4a90e2] via-[#4a7ebb] to-[#2c3e50] dark:from-[#1e293b] dark:via-[#2c3e50] dark:to-[#3b4d61] transition-colors duration-300">
-      <div className="absolute top-4 right-4">
+  <main className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#4a90e2] via-[#4a7ebb] to-[#2c3e50] dark:from-[#1e293b] dark:via-[#2c3e50] dark:to-[#3b4d61] transition-colors duration-300">
+    <div className="absolute top-4 right-4">
         <ThemeToggle />
       </div>
 
@@ -162,8 +196,8 @@ export default function Home() {
 
           <div className="pt-4">
             <p className="text-xl text-[#334155] dark:text-[#cbd5e1]">Carried out by</p>
-            <p className="text-xl font-medium text-[#1e40af] dark:text-[#93c5fd]">Kevin Saji Jacob (221IT038)</p>
-            <p className="text-xl font-medium text-[#1e40af] dark:text-[#93c5fd]">Sricharan Sridhar (221IT066)</p>
+            <p className="text-xl font-medium text-[#1e40af] dark:text-[#93c5fd]">Student Name (Roll Number)</p>
+            <p className="text-xl font-medium text-[#1e40af] dark:text-[#93c5fd]">Student Name (Roll Number)</p>
             <p className="text-xl text-[#334155] dark:text-[#cbd5e1]">During Academic Session January – April 2025</p>
           </div>
 

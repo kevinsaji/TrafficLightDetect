@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server"
+import { NextRequest, NextResponse } from "next/server";
 import { spawn } from "child_process"
 import path from "path"
 import fs from "fs"
@@ -36,6 +36,7 @@ export async function POST() {
     return NextResponse.json({ error: "Failed to set up model" }, { status: 500 })
   }
 }
+
 
 async function generateModel(): Promise<string> {
   return new Promise((resolve, reject) => {
