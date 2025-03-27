@@ -197,8 +197,8 @@ const processImage = async (imageFile: File) => {
 
           <div className="pt-4">
             <p className="text-xl text-[#334155] dark:text-[#cbd5e1]">Carried out by</p>
-            <p className="text-xl font-medium text-[#1e40af] dark:text-[#93c5fd]">Student Name (Roll Number)</p>
-            <p className="text-xl font-medium text-[#1e40af] dark:text-[#93c5fd]">Student Name (Roll Number)</p>
+            <p className="text-xl font-medium text-[#1e40af] dark:text-[#93c5fd]">Kevin Saji Jacob (221IT038)</p>
+            <p className="text-xl font-medium text-[#1e40af] dark:text-[#93c5fd]">Sricharan Sridhar (221IT066)</p>
             <p className="text-xl text-[#334155] dark:text-[#cbd5e1]">During Academic Session January – April 2025</p>
           </div>
 
