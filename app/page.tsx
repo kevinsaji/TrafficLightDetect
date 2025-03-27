@@ -190,7 +190,7 @@ export default function Home() {
             <input ref={fileInputRef} type="file" accept="image/*" className="hidden" onChange={handleImageChange} />
 
             <Button
-              className="w-96 h-14 text-xl bg-[#4a7ebb] hover:bg-[#3a6eab]"
+              className="w-96 h-14 text-xl bg-[#4a7ebb] hover:bg-[#3a6eab] text-white"
               onClick={handleInputClick}
               disabled={loading}
             >
@@ -198,7 +198,7 @@ export default function Home() {
             </Button>
 
             <Button
-              className="w-96 h-14 text-xl bg-[#4a7ebb] hover:bg-[#3a6eab]"
+              className="w-96 h-14 text-xl bg-[#4a7ebb] hover:bg-[#3a6eab] text-white"
               onClick={handleShowOutput}
               disabled={!processed || loading}
             >
@@ -206,7 +206,7 @@ export default function Home() {
             </Button>
 
             <Button
-              className="w-96 h-14 text-xl bg-[#4a7ebb] hover:bg-[#3a6eab]"
+              className="w-96 h-14 text-xl bg-[#4a7ebb] hover:bg-[#3a6eab] text-white"
               onClick={handleSaveResults}
               disabled={!processed || loading || !results || results.length === 0}
             >
