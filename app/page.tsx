@@ -147,7 +147,7 @@ export default function Home() {
     <main className="min-h-screen flex flex-col items-center justify-center bg-[#f2f7e9]">
       <Card className="max-w-4xl w-full p-8 text-center bg-[#f2f7e9] border-0 shadow-none">
         <div className="space-y-6">
-          <h1 className="text-4xl font-bold tracking-tight md:text-5xl text-black">
+          <h1 className="text-4xl font-bold tracking-tight md:text-4xl text-black">
             DEPARTMENT OF INFORMATION TECHNOLOGY
           </h1>
           <h2 className="text-2xl font-semibold text-black">
