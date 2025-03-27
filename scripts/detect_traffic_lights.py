@@ -8,7 +8,7 @@ from io import BytesIO
 from ultralytics import YOLO
 
 # Load the YOLO model
-model = YOLO("/home/sricharan12/TrafficLightDetect/scripts/best.pt")
+model = YOLO("scripts/best.pt")
 
 def hsv_improved_classification(image):
     predicted_label = None
