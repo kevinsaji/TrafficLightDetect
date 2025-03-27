@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""
 import sys
 import json
 import base64
@@ -7,9 +6,6 @@ import cv2
 import numpy as np
 from io import BytesIO
 from ultralytics import YOLO
-from dotenv import load_dotenv
-
-load_dotenv()
 
 # Load the YOLO model
 model = YOLO("scripts/best.pt")
@@ -305,3 +301,5 @@ def detect_traffic_lights():
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+
+"""

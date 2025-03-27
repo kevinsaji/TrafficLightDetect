@@ -78,11 +78,12 @@ export default function Home() {
       setLoading(false)
     }
   }
-*/
+
 
 const API_BASE_URL = process.env.NODE_ENV === 'development' 
   ? 'http://127.0.0.1:5000/detect'  // Local Flask backend
   : '/api/detect';  // Netlify deployed backend
+*/
 
 const processImage = async (imageFile: File) => {
   setLoading(true)
@@ -92,7 +93,7 @@ const processImage = async (imageFile: File) => {
     const formData = new FormData()
     formData.append("image", imageFile)
 
-    const response = await fetch("http://127.0.0.1:5000/detect", {
+    const response = await fetch("/api/detect", {
       method: "POST",
       body: formData,
     })
